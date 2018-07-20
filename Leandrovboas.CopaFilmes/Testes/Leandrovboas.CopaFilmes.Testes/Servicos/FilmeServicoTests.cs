@@ -1,10 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Leandrovboas.CopaFilmes.Infra.Repositorio;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace Leandrovboas.CopaFilmes.Infra.Repositorio.Tests
+namespace Leandrovboas.CopaFilmes.Dominio.Servicos.Tests
 {
     [TestClass()]
-    public class FilmesRepositorioTests
+    public class FilmeServicoTests
     {
         private const int TOTAL_FILMES = 64;
 

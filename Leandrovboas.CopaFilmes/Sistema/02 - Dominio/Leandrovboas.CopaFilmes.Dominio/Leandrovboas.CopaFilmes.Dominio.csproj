@@ -43,10 +43,10 @@
   <ItemGroup>
     <Compile Include="Entity\Filme.cs" />
     <Compile Include="Interfaces\Repositorio\IFilmesRepositorio.cs" />
+    <Compile Include="Interfaces\Servico\IFilmeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\FilmeServico.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Servicos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
