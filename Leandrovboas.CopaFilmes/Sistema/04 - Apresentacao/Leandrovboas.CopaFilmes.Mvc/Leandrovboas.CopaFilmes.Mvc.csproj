@@ -187,6 +187,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="modules\filme\app.js" />
+    <Content Include="modules\filme\controllers\filme-controller.js" />
     <Content Include="Scripts\angularJs\angular-animate.js" />
     <Content Include="Scripts\angularJs\angular-animate.min.js" />
     <Content Include="Scripts\angularJs\angular-aria.min.js" />
@@ -1033,6 +1035,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="modules\filme\directives\" />
+    <Folder Include="modules\filme\services\" />
+    <Folder Include="modules\filme\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery\jquery-3.3.1.slim.min.map" />
