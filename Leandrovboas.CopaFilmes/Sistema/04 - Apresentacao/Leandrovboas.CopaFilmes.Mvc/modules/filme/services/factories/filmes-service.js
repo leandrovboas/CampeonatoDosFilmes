@@ -5,10 +5,11 @@
 
     function filmeService($http) {
         var baseUrl = 'api/filmes/';
+        var getFilmes = function () {
+            return $http.get(baseUrl + "listar/");
+        };
         return {
-            'obter': function (id) {
-                return $http.get(baseUrl + "Obter/" + id);
-            }
+            getFilmes: getFilmes,
         };
     }
 })(angular.module('ngService'));

@@ -3,8 +3,8 @@
     ViewBag.AngularApp = "FilmeApp";
     ViewBag.AngularController = "FilmeCtrl as vm";
 }
-<div class="fundo-tela cor-fundo">
-    <div class="form-control fundo-titulo">
+<div class="fundo-tela cor-fundo" ng-init="vm.carregarFilmes()">
+    <header class="form-control fundo-titulo">
         <p class="text-uppercase pre-titulo">Campeonato de filmes</p>
         <p class="titulo">Fase de Seleção</p>
         <p class="line"></p>
@@ -15,22 +15,36 @@
             </div>
             <div class="col-2"></div>
         </div>
-    </div>
-    <div class="form-control cor-fundo sem-borda">
+    </header>
+
+    <section class="form-control cor-fundo sem-borda">
         <div class="row">
             <div class="col-3"> Selecionados {{vm.filmesSelecionados.length}} de {{vm.quantidadeFilmesSelecionar}} Filmes</div>
-            <div class="col-5"></div>
+            <div class="col-6"></div>
             <div class="col-3">
                 <input class="btn btn-dark text-uppercase font-size-small"
                        font-size-small name="GerarCampeonato"
                        title="Gerar Meu Campeonate"
-                       style="margin-left: 40px;"
                        type="button"
-                       value="Gerar Meu Campeonate" />
+                       value="Gerar Meu Campeonate"
+                       ng-click="vm.gerarCampeonato();"/>
             </div>
         </div>
-    </div>
-    <div class="form-control cor-fundo sem-borda"></div>
+    </section>
+
+    <section class="form-control cor-fundo sem-borda">
+        <div class="row">
+            <div ng-class="{false:'panel-filme', true:'panel-filme-selecionado'}[filme.Selecionado]"
+                 ng-click="vm.selecionar(filme)"
+                 ng-repeat="filme in vm.listaFilmes">
+                <div class="clearfix"></div>
+                <div>
+                    <p class="titulo-filme">{{filme.Titulo}}</p>
+                    <p class="ano-filme">{{filme.AnoLancamento}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </div>
 

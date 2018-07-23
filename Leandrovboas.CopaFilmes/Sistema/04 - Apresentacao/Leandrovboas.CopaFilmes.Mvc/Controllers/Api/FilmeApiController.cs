@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace Leandrovboas.CopaFilmes.Mvc.Controllers.Api
 {
-    [RoutePrefix("api/filmes")]
+    [RoutePrefix("Filmes/api/filmes")]
     public class FilmeApiController : ApiController
     {
         private readonly IFilmeServicoApp ServicoApp;
@@ -20,6 +20,7 @@ namespace Leandrovboas.CopaFilmes.Mvc.Controllers.Api
         [Route("listar")]
         public async Task<IHttpActionResult> ListarTodasAsync()
         {
+
             var filmes = await ServicoApp.GetAllAsync();
             if (filmes != null)
             {

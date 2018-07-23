@@ -6,5 +6,6 @@
         public string Titulo { get; set; }
         public int AnoLancamento { get; set; }
         public string Nota { get; set; }
+        public bool Selecionado { get; set; } = false;
     }
 }

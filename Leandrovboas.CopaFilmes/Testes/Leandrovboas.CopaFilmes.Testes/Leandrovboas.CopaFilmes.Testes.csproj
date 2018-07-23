@@ -57,8 +57,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssertThrows.cs" />
+    <Compile Include="Entity\FaseDeGrupoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dominio\FilmeServicoTests.cs" />
+    <Compile Include="Dominio\CampeonatoServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sistema\01 - Infra\Leandrovboas.CopaFilmes.Infra\Leandrovboas.CopaFilmes.Infra.csproj">

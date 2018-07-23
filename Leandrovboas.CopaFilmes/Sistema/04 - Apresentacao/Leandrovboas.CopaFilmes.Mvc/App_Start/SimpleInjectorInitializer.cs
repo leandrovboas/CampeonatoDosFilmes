@@ -39,7 +39,7 @@ namespace Leandrovboas.CopaFilmes.Mvc.App_Start
         private static void InitializeContainer(Container container)
         {
             container.Register<IFilmesRepositorio, FilmesRepositorio>(Lifestyle.Scoped);
-            container.Register<IFilmeService, FilmeServico>(Lifestyle.Scoped);
+            container.Register<IFilmeServico, FilmeServico>(Lifestyle.Scoped);
             container.Register<IFilmeServicoApp, FilmeServicoApp>(Lifestyle.Scoped);
         }
     }

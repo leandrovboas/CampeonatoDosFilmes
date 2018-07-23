@@ -1,4 +1,4 @@
 ﻿(function () {
     'use strict';
-    angular.module('ngService', []);
+    angular.module('ngService', ['ngServiceWrapper']);
 })();

@@ -26,7 +26,7 @@ textarea {
 
 .fundo-tela {
     position: relative;
-    height: 1000px;
+    height: auto;
     width: 60%;
     margin: 0 auto;
     padding: 20px;
@@ -80,4 +80,34 @@ textarea {
     overflow: hidden;
     background-color: #A8A8A8;
     position:center !important;*/
+}
+.panel-filme {
+    background-color: white;
+    color: black;
+    border: solid 3px #A8A8A8;
+    width: 25%;
+    height: 100px;
+    padding: 1%;
+}
+
+.panel-filme-selecionado {
+    background: linear-gradient(#152B40, #152B40);
+    color: white;
+    border: solid 3px #A8A8A8;
+    width: 25%;
+    height: 100px;
+    padding: 1%;
+}
+
+.titulo-filme {
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.ano-filme{
+    font-size: 10px;
+}
+
+.btn {
+    float: right;
 }

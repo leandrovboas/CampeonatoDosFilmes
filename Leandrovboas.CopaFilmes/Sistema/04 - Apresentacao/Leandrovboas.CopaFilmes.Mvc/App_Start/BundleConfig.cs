@@ -10,10 +10,10 @@ namespace Leandrovboas.CopaFilmes.Mvc
         {
             #region Scripts
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                            "~/Scripts/jquery-{version}.js"));
+                            "~/Scripts/jquery/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
@@ -32,8 +32,6 @@ namespace Leandrovboas.CopaFilmes.Mvc
                 "~/Scripts/angular/loader.js",
                 "~/Scripts/angular/angular-service-wrapper.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/toastr").Include("~/Scripts/toastr.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/filmes")
                 .Include("~/modules/filme/app.js")
                 .Include("~/modules/filme/controllers/*.js")
@@ -47,7 +45,8 @@ namespace Leandrovboas.CopaFilmes.Mvc
 
             #region Css
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                          "~/Content/bootstrap.css")); 
+                          "~/Content/bootstrap.css",
+                          "~/Content/toastr.css")); 
             #endregion
         }
     }

@@ -1,11 +1,10 @@
 ﻿using Leandrovboas.CopaFilmes.Dominio.Entity;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Interfaces.Servico
 {
-    public interface IFilmeService
+    public interface ICampeonatoServico
     {
-        Task<IEnumerable<Filme>> GetAllAsync();
+        Campeonato RealizarCampeonato(List<Filme> listaFilmes);
     }
 }

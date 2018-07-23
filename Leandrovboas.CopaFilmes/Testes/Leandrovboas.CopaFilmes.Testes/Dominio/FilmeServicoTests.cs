@@ -12,8 +12,8 @@ namespace Leandrovboas.CopaFilmes.Dominio.Servicos.Tests
         [TestMethod]
         public void GetAllAsyncTest()
         {
-            var filmesRepositorio = new FilmesRepositorio();
-            var filmes = filmesRepositorio.GetAllAsync().Result;
+            var filmesServico = new FilmeServico(new FilmesRepositorio());
+            var filmes = filmesServico.GetAllAsync().Result;
 
             Assert.IsNotNull(filmes);
             Assert.IsTrue(filmes.ToList().Count == TOTAL_FILMES);

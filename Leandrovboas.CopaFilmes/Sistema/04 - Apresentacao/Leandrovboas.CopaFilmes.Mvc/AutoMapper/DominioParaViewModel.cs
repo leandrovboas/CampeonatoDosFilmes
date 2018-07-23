@@ -6,6 +6,9 @@ namespace Leandrovboas.CopaFilmes.Mvc.AutoMapper
 {
     public class DominioParaViewModel : Profile
     {
-        public DominioParaViewModel() => CreateMap<FilmeViewModel, Filme>();
+        public DominioParaViewModel() => CreateMap<FilmeViewModel, Filme>()
+            .ForMember(dest => dest.PrimaryTitle, opt => opt.MapFrom(src => src.Titulo))
+            .ForMember(dest => dest.AverageRating, opt => opt.MapFrom(src => src.Nota))
+            .ForMember(dest => dest.Year, opt => opt.MapFrom(src => src.AnoLancamento));
     }
 }

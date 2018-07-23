@@ -1,8 +1,10 @@
 ﻿using Leandrovboas.CopaFilmes.Dominio.Entity;
 using Leandrovboas.CopaFilmes.Dominio.Interfaces.Repositorio;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -37,7 +39,7 @@ namespace Leandrovboas.CopaFilmes.Infra.Repositorio
             if (response.IsSuccessStatusCode)
             {
                 var filmes = response?.Content?.ReadAsAsync<IEnumerable<Filme>>().Result;
-                return filmes;
+                return filmes.OrderBy(o => o.PrimaryTitle).ToList();
             }
             else throw new HttpRequestException($"StatusCodeError: {response.StatusCode} ErrorMessage: Problema ao conectar com a WebApi externa");
         }

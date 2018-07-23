@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,12 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Campeonato.cs" />
+    <Compile Include="Entity\Disputa.cs" />
+    <Compile Include="Entity\FaseDeGrupo.cs" />
+    <Compile Include="Entity\FaseEliminatoria.cs" />
+    <Compile Include="Entity\FaseFinal.cs" />
+    <Compile Include="Entity\FaseSemiFinal.cs" />
     <Compile Include="Entity\Filme.cs" />
+    <Compile Include="Extension\EnumerableExtension.cs" />
     <Compile Include="Interfaces\Repositorio\IFilmesRepositorio.cs" />
-    <Compile Include="Interfaces\Servico\IFilmeService.cs" />
+    <Compile Include="Interfaces\Servico\ICampeonatoServico.cs" />
+    <Compile Include="Interfaces\Servico\IFilmeServico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicos\FilmeServico.cs" />
+    <Compile Include="Services\CampeonatoServico.cs" />
+    <Compile Include="Services\FilmeServico.cs" />
+    <Compile Include="validate\FilmesValidate.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

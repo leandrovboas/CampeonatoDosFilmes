@@ -8,9 +8,9 @@ namespace Leandrovboas.CopaFilmes.Aplicacao.Servicos
 {
     public class FilmeServicoApp : IFilmeServicoApp
     {
-        private readonly IFilmeService FilmeServico;
+        private readonly IFilmeServico FilmeServico;
 
-        public FilmeServicoApp(IFilmeService filmeServico)
+        public FilmeServicoApp(IFilmeServico filmeServico)
         {
             FilmeServico = filmeServico;
         }

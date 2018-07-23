@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Servicos
 {
-    public class FilmeServico : IFilmeService
+    public class FilmeServico : IFilmeServico
     {
         private readonly IFilmesRepositorio FilmeRepositorio;
 
