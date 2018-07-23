@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--[if IE 7]>
+    <html class="no-js ie7" lang="pt-br">
+    <![endif]-->
+    <!--[if IE 8]>
+        <html class="no-js ie8" lang="pt-br">
+        <![endif]-->
+    <!--[if IE 9]>
+        <html class="no-js ie9" lang="pt-br">
+        <![endif]-->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copa de filmes - @ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="../Content/Site.css">
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", false)
+</head>
+<body>
+    <div @Html.Raw(ViewBag.AngularApp != null ? $" ng-app='{ViewBag.AngularApp}'" : string.Empty)>
+        <div class="content-geral" @Html.Raw(ViewBag.AngularController != null ? $" ng-controller='{ViewBag.AngularController}'" : string.Empty)>
+            <div class="panel-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/toastr")
+    @Scripts.Render("~/bundles/angular")
+
+    @RenderSection("scripts", false)
+</body>
+</html>

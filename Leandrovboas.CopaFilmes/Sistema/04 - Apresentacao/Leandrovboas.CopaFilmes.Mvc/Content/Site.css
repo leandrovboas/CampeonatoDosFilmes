@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,62 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.fundo-tela {
+    position: relative;
+    height: 1000px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    resize: both;
+}
+.cor-fundo {
+    background-color: #A8A8A8 !important;
+    color: white !important;
+}
+
+.sem-borda {
+    padding: 20px;
+    border: none !important;
+}
+
+.font-size-small{
+    font-size: small !important;
+}
+
+.fundo-titulo {
+    background-color: #6E6E6E !important;
+    border: none !important;
+    padding: 20px !important;
+    margin: 20px !important;
+    height: auto !important;
+    width: auto !important;
+    color: white !important;
+    text-align: center;
+}
+
+.pre-titulo {
+    color: #A8A8A8;
+    font-size: small
+}
+
+.titulo {
+    font-size: xx-large
+}
+
+.sub-titulo {
+    font-size: small
+}
+
+.line {
+    border-bottom: solid 3px #A8A8A8;
+    width: 25px;
+    /*border-bottom: solid 1px #000;
+        width: 25px;
+    height: 2px;
+    clear: both;
+    overflow: hidden;
+    background-color: #A8A8A8;
+    position:center !important;*/
 }

@@ -1,3 +1,3 @@
 ﻿(function () {
-    angular.module('filmeApp', ['ngService', 'FilmeComponentApp']);
+    angular.module('FilmeApp', ['ngService']);
 })();

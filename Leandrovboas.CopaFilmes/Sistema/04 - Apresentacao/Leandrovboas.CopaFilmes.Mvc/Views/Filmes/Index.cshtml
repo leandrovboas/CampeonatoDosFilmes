@@ -1,13 +1,40 @@
-﻿<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        teste aplicação
+﻿@{
+    ViewBag.Title = "Fase de Selação";
+    ViewBag.AngularApp = "FilmeApp";
+    ViewBag.AngularController = "FilmeCtrl as vm";
+}
+<div class="fundo-tela cor-fundo">
+    <div class="form-control fundo-titulo">
+        <p class="text-uppercase pre-titulo">Campeonato de filmes</p>
+        <p class="titulo">Fase de Seleção</p>
+        <p class="line"></p>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <p class="sub-titulo">Selecione 16 filmes que você deseja que entrem na competiçãoe depoisprecione o botão Gerar Meu Campeonato para prosseguir</p>
+            </div>
+            <div class="col-2"></div>
+        </div>
     </div>
-</body>
-</html>
+    <div class="form-control cor-fundo sem-borda">
+        <div class="row">
+            <div class="col-3"> Selecionados {{vm.filmesSelecionados.length}} de {{vm.quantidadeFilmesSelecionar}} Filmes</div>
+            <div class="col-5"></div>
+            <div class="col-3">
+                <input class="btn btn-dark text-uppercase font-size-small"
+                       font-size-small name="GerarCampeonato"
+                       title="Gerar Meu Campeonate"
+                       style="margin-left: 40px;"
+                       type="button"
+                       value="Gerar Meu Campeonate" />
+            </div>
+        </div>
+    </div>
+    <div class="form-control cor-fundo sem-borda"></div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/filmes")
+    @Scripts.Render("~/bundles/ng-service")
+}
