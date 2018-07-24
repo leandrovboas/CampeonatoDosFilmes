@@ -22,7 +22,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
                 {
                     Id = teste,
                     PrimaryTitle = teste,
-                    AverageRating = Convert.ToDecimal(i).ToString(),
+                    AverageRating = $"{i}.0",
                     Year = DateTime.Now.Year
                 });
             }
@@ -35,20 +35,20 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
             var faseGrupo = FaseDeGrupo.GerarFaseDeGrupo(listaFilmes);
 
             Assert.IsTrue(faseGrupo?.GrupoA?.Count == 4);
-            var maiorValorGrupoA = faseGrupo.GrupoA.Max(elem => Math.Max(Convert.ToDecimal(elem.AverageRating), Convert.ToDecimal(elem.AverageRating)));
-            Assert.AreEqual(maiorValorGrupoA.ToString(), faseGrupo.GrupoA[0].AverageRating);
+            var maiorValorGrupoA = faseGrupo.GrupoA.Max(elem => Math.Max(elem.SetAvageRatingDecimal, elem.SetAvageRatingDecimal));
+            Assert.AreEqual(maiorValorGrupoA, faseGrupo.GrupoA.FirstOrDefault().SetAvageRatingDecimal);
 
             Assert.IsTrue(faseGrupo?.GrupoB?.Count == 4);
-            var maiorValorGrupoB = faseGrupo.GrupoB.Max(elem => Math.Max(Convert.ToDecimal(elem.AverageRating), Convert.ToDecimal(elem.AverageRating)));
-            Assert.AreEqual(maiorValorGrupoB.ToString(), faseGrupo.GrupoB[0].AverageRating);
+            var maiorValorGrupoB = faseGrupo.GrupoB.Max(elem => Math.Max(elem.SetAvageRatingDecimal, elem.SetAvageRatingDecimal));
+            Assert.AreEqual(maiorValorGrupoB, faseGrupo.GrupoB.FirstOrDefault().SetAvageRatingDecimal);
 
             Assert.IsTrue(faseGrupo?.GrupoC?.Count == 4);
-            var maiorValorGrupoC = faseGrupo.GrupoC.Max(elem => Math.Max(Convert.ToDecimal(elem.AverageRating), Convert.ToDecimal(elem.AverageRating)));
-            Assert.AreEqual(maiorValorGrupoC.ToString(), faseGrupo.GrupoC[0].AverageRating);
+            var maiorValorGrupoC = faseGrupo.GrupoC.Max(elem => Math.Max(elem.SetAvageRatingDecimal, elem.SetAvageRatingDecimal));
+            Assert.AreEqual(maiorValorGrupoC, faseGrupo.GrupoC.FirstOrDefault().SetAvageRatingDecimal);
 
             Assert.IsTrue(faseGrupo?.GrupoD?.Count == 4);
-            var maiorValorGrupoD = faseGrupo.GrupoD.Max(elem => Math.Max(Convert.ToDecimal(elem.AverageRating), Convert.ToDecimal(elem.AverageRating)));
-            Assert.AreEqual(maiorValorGrupoD.ToString(), faseGrupo.GrupoD[0].AverageRating);
+            var maiorValorGrupoD = faseGrupo.GrupoD.Max(elem => Math.Max(elem.SetAvageRatingDecimal, elem.SetAvageRatingDecimal));
+            Assert.AreEqual(maiorValorGrupoD, faseGrupo.GrupoD.FirstOrDefault().SetAvageRatingDecimal);
         }
     }
 }

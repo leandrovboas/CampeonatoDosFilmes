@@ -36,14 +36,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         {
             var result = listaFilmes.PickRandom(4).ToList();
             listaFilmes.RemoveItens(result);
-            return result.OrderByDescending(x => x.AvageRatingDecimal).ToList();
-        }
-
-        private static void RemoveItens(ref List<Filme> listaFilmes, List<Filme> grupoA) {
-            foreach (var item in grupoA)
-            {
-                listaFilmes.Remove(item);
-            }
+            return OrdenarFaseDeGrupo.Ordenar(result);
         }
     }
 }

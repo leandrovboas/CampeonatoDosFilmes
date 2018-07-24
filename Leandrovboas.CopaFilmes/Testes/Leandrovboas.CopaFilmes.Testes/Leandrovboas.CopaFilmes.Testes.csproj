@@ -61,6 +61,7 @@
     <Compile Include="Entity\DisputaTests.cs" />
     <Compile Include="Entity\FaseDeGrupoTests.cs" />
     <Compile Include="Entity\FaseEliminatoriaTests.cs" />
+    <Compile Include="Dominio\OrdenarFaseDeGrupoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dominio\FilmeServicoTests.cs" />
     <Compile Include="Dominio\CampeonatoServiceTests.cs" />

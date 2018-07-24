@@ -56,10 +56,11 @@
     <Compile Include="Interfaces\Repositorio\IFilmesRepositorio.cs" />
     <Compile Include="Interfaces\Servico\ICampeonatoServico.cs" />
     <Compile Include="Interfaces\Servico\IFilmeServico.cs" />
+    <Compile Include="OrdenarFaseDeGrupo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CampeonatoServico.cs" />
     <Compile Include="Services\FilmeServico.cs" />
-    <Compile Include="validate\FilmesValidate.cs" />
+    <Compile Include="Validate\FilmesValidate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
