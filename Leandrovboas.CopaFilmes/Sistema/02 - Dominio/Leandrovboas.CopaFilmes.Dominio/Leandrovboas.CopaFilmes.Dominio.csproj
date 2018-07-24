@@ -52,6 +52,7 @@
     <Compile Include="Entity\FaseSemiFinal.cs" />
     <Compile Include="Entity\Filme.cs" />
     <Compile Include="Extension\EnumerableExtension.cs" />
+    <Compile Include="Extension\ListExtension.cs" />
     <Compile Include="Interfaces\Repositorio\IFilmesRepositorio.cs" />
     <Compile Include="Interfaces\Servico\ICampeonatoServico.cs" />
     <Compile Include="Interfaces\Servico\IFilmeServico.cs" />

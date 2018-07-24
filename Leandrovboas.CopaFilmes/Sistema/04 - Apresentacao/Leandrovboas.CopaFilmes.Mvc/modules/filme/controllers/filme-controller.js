@@ -33,17 +33,18 @@
         };
 
         vm.gerarCampeonato = () => {
-            if (vm.filmesSelecionados.length !== 16) toastr.error("Selecione 16 filmes para gerar o campeonato", "Parametro Invalido", );
+            if (vm.filmesSelecionados.length !== 16) { toastr.error("Selecione 16 filmes para gerar o campeonato", "Parametro Invalido"); return;};
 
             toastr.success("Gerando Campeonato ........", "Gerar Campeonato", );
         }
 
         vm.selecionar = (filme) => {
-            if (!filme.Selecionado) {
-                adicionarFilme(filme);
-            } else {
-                removerFilme(filme);
+            if (!filme. Selecionado && vm.filmesSelecionados.length == vm.quantidadeFilmesSelecionar) {
+                toastr.warning("Já estamos com os " + vm.quantidadeFilmesSelecionar + " filmes para iniciar o campeonato.");
+                return;
             }
+            if (!filme.Selecionado) { adicionarFilme(filme); }
+            else { removerFilme(filme); }
         }
     }
 })(angular.module('FilmeApp'));

@@ -15,11 +15,11 @@ namespace Leandrovboas.CopaFilmes.Dominio.validate
             if (listaFilmes.Count != QUANTIDADE_FILMES_CAMPEOATO) throw new ArgumentOutOfRangeException(nameof(listaFilmes), $"Deve conter {QUANTIDADE_FILMES_CAMPEOATO} filmes para iniciar o Campeonato");
         }
 
-        internal static void ValidarListasFaseGrupo(List<Filme> grupoA, List<Filme> grupoB, List<Filme> grupoC, List<Filme> grupoD) {
-            if (grupoA == null || grupoA.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(grupoA), $"O Parametro {nameof(grupoA)} esta incorreto");
-            if (grupoB == null || grupoB.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(grupoB), $"O Parametro {nameof(grupoB)} esta incorreto");
-            if (grupoC == null || grupoC.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(grupoC), $"O Parametro {nameof(grupoC)} esta incorreto");
-            if (grupoD == null || grupoD.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(grupoD), $"O Parametro {nameof(grupoA)} esta incorreto");
+        internal static void ValidarListasFaseGrupo(FaseDeGrupo faseGrupo) {
+            if (faseGrupo.GrupoA == null || faseGrupo.GrupoA.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(faseGrupo.GrupoA), $"O Parametro {nameof(faseGrupo.GrupoA)} esta incorreto");
+            if (faseGrupo.GrupoB == null || faseGrupo.GrupoB.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(faseGrupo.GrupoB), $"O Parametro {nameof(faseGrupo.GrupoB)} esta incorreto");
+            if (faseGrupo.GrupoC == null || faseGrupo.GrupoC.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(faseGrupo.GrupoC), $"O Parametro {nameof(faseGrupo.GrupoC)} esta incorreto");
+            if (faseGrupo.GrupoD == null || faseGrupo.GrupoD.Count != QUANTIDADE_FASE_GRUPO) throw new ArgumentException(nameof(faseGrupo.GrupoD), $"O Parametro {nameof(faseGrupo.GrupoD)} esta incorreto");
         }
     }
 }
