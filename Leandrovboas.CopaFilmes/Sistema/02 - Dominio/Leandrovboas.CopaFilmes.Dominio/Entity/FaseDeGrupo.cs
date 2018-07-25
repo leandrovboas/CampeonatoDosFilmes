@@ -8,12 +8,15 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
     public class FaseDeGrupo
     {
+        #region Propriedades
         private static List<Filme> ListaFilmes;
         public List<Filme> GrupoA { get; }
         public List<Filme> GrupoB { get; }
         public List<Filme> GrupoC { get; }
-        public List<Filme> GrupoD { get; }
+        public List<Filme> GrupoD { get; } 
+        #endregion
 
+        #region Construtor
         protected FaseDeGrupo(List<Filme> listaFilmes)
         {
             FilmesValidate.ValidarListaFilmesCampeonato(listaFilmes);
@@ -27,16 +30,21 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
             if (ListaFilmes.Count != 0) throw new ApplicationException("Ocorreu um problema na criação da faze de grupo");
 
             FilmesValidate.ValidarListasFaseGrupo(this);
-        }
+        } 
+        #endregion
 
+        #region MetodosPublicos
         public static FaseDeGrupo GerarFaseDeGrupo(List<Filme> listaFilmes) =>
-            new FaseDeGrupo(listaFilmes);
+            new FaseDeGrupo(listaFilmes); 
+        #endregion
 
+        #region MetodosPrivados
         private static List<Filme> GerarGrupos(ref List<Filme> listaFilmes)
         {
             var result = listaFilmes.PickRandom(4).ToList();
             listaFilmes.RemoveItens(result);
             return OrdenarFaseDeGrupo.Ordenar(result);
-        }
+        } 
+        #endregion
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Leandrovboas.CopaFilmes.Testes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +13,8 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
         private List<Filme> listaFilmes;
 
         [TestInitialize]
-        public void Inicializar()
-        {
-            listaFilmes = new List<Filme>();
-            for (int i = 0; i < 16; i++)
-            {
-                var teste = $"Teste - {i}";
-                listaFilmes.Add(new Filme
-                {
-                    Id = teste,
-                    PrimaryTitle = teste,
-                    AverageRating = $"{i}.0",
-                    Year = DateTime.Now.Year
-                });
-            }
-
-        }
+        public void Inicializar() => 
+            listaFilmes = CriacaoListaFilmes.Criar();
 
         [TestMethod()]
         public void GerarFaseDeGrupoTest()

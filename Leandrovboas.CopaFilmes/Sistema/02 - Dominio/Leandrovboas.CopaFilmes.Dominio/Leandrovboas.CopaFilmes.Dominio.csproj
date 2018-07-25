@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisputaEmpate.cs" />
     <Compile Include="Entity\Campeonato.cs" />
     <Compile Include="Entity\Disputa.cs" />
     <Compile Include="Entity\FaseDeGrupo.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Entity\FaseFinal.cs" />
     <Compile Include="Entity\FaseSemiFinal.cs" />
     <Compile Include="Entity\Filme.cs" />
+    <Compile Include="Entity\Grupo.cs" />
     <Compile Include="Extension\EnumerableExtension.cs" />
     <Compile Include="Extension\ListExtension.cs" />
     <Compile Include="Interfaces\Repositorio\IFilmesRepositorio.cs" />

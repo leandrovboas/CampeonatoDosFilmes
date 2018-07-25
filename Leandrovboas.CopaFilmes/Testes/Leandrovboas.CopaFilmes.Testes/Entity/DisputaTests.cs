@@ -40,7 +40,6 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
             Assert.AreEqual<Filme>(result.Perdedor, filme2);
         }
 
-
         [TestMethod()]
         public void GerarDisputaMesmaNotaTest()
         {

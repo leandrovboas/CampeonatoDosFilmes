@@ -30,5 +30,26 @@ namespace Leandrovboas.CopaFilmes.Dominio.validate
             if (string.IsNullOrWhiteSpace(filme1.AverageRating)) throw new ArgumentException(nameof(filme1), $"O {nameof(filme1)} não possui nota");
             if (string.IsNullOrWhiteSpace(filme2.AverageRating)) throw new ArgumentException(nameof(filme2), $"O {nameof(filme2)} não possui nota");
         }
+
+        internal static void ValidarFaseEliminatoria(FaseDeGrupo faseDeGrupo)
+        {
+            if (faseDeGrupo == null) throw new ArgumentNullException(nameof(faseDeGrupo), $"A {nameof(faseDeGrupo)} esta nula");
+            if (faseDeGrupo.GrupoA == null) throw new ArgumentNullException(nameof(faseDeGrupo.GrupoA), $"A {nameof(faseDeGrupo.GrupoA)} esta nula");
+            if (faseDeGrupo.GrupoB == null) throw new ArgumentNullException(nameof(faseDeGrupo.GrupoB), $"A {nameof(faseDeGrupo.GrupoB)} esta nula");
+            if (faseDeGrupo.GrupoC == null) throw new ArgumentNullException(nameof(faseDeGrupo.GrupoC), $"A {nameof(faseDeGrupo.GrupoC)} esta nula");
+            if (faseDeGrupo.GrupoD == null) throw new ArgumentNullException(nameof(faseDeGrupo.GrupoD), $"A {nameof(faseDeGrupo.GrupoD)} esta nula");
+        }
+
+        internal static void ValidarFaseSemiFinal(FaseEliminatoria faseEliminatoria)
+        {
+            if (faseEliminatoria == null) throw new ArgumentNullException(nameof(faseEliminatoria), $"A {nameof(faseEliminatoria)} esta nula");
+            if (faseEliminatoria.PrimeiraDisputa == null) throw new ArgumentNullException(nameof(faseEliminatoria.PrimeiraDisputa), $"A {nameof(faseEliminatoria.PrimeiraDisputa)} esta nula");
+            if (faseEliminatoria.SegundaDisputa == null) throw new ArgumentNullException(nameof(faseEliminatoria.SegundaDisputa), $"A {nameof(faseEliminatoria.SegundaDisputa)} esta nula");
+            if (faseEliminatoria.TerceiraDisputa == null) throw new ArgumentNullException(nameof(faseEliminatoria.TerceiraDisputa), $"A {nameof(faseEliminatoria.TerceiraDisputa)} esta nula");
+            if (faseEliminatoria.QuartaDisputa == null) throw new ArgumentNullException(nameof(faseEliminatoria.QuartaDisputa), $"A {nameof(faseEliminatoria.QuartaDisputa)} esta nula");
+        }
+
+
+
     }
 }
