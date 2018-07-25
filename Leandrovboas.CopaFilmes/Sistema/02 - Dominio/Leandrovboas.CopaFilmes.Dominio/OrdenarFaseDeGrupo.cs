@@ -7,6 +7,7 @@ namespace Leandrovboas.CopaFilmes.Dominio
 {
     public static class OrdenarFaseDeGrupo
     {
+        //TODO: Refatorar: Alterar a classe para um ordenador passar a lista para o construtor e retornas a ordenacao em propriedade
         public static List<Filme> Ordenar(List<Filme> listaFilmes)
         {
            if (listaFilmes == null) throw new ArgumentException(nameof(listaFilmes), $"O Parametro {nameof(listaFilmes)} esta invalido");

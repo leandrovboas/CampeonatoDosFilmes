@@ -1,6 +1,4 @@
 ﻿using Leandrovboas.CopaFilmes.Dominio.validate;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
@@ -26,10 +24,16 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
 
         #region Propriedades
         public Filme Vencedor { get; }
-        public Filme Perdedor { get; } 
+        public Filme Perdedor { get; }
         #endregion
 
         #region MetodosPublicos
+        /// <summary>
+        /// A partir de dois filmes realiza uma disputa para definir o vencedor e o perdedor
+        /// </summary>
+        /// <param name="filme1">Primeiro Filme</param>
+        /// <param name="filme2">Segunco Filme</param>
+        /// <returns>Retorna o resultado de uma disputa entra dois filmes</returns>
         public static Disputa GerarDisputa(Filme filme1, Filme filme2) =>
            new Disputa(filme1, filme2);
         #endregion

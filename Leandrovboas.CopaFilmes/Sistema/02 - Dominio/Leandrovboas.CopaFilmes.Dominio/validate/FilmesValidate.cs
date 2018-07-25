@@ -6,6 +6,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.validate
 {
     public static class FilmesValidate
     {
+        //TODO: Refatorar: Alterar para que cada validação esteja em uma classe
         private const int QUANTIDADE_FILMES_CAMPEOATO = 16;
         private const int QUANTIDADE_FASE_GRUPO = 4;
 
