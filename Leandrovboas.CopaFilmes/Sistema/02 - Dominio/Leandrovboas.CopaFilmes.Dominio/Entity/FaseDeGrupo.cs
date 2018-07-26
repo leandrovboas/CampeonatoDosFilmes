@@ -3,6 +3,7 @@ using Leandrovboas.CopaFilmes.Dominio.validate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
@@ -43,8 +44,10 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         {
             var result = listaFilmes.PickRandom(4).ToList();
             listaFilmes.RemoveItens(result);
-            return OrdenarFaseDeGrupo.Ordenar(result);
-        } 
+            result = result.OrdenarFormaGenerico(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
+            result = result.OrdenarFormaGenerico(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
+            return result;
+        }
         #endregion
     }
 }

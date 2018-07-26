@@ -1,7 +1,9 @@
 ﻿using Leandrovboas.CopaFilmes.Dominio.Entity;
+using Leandrovboas.CopaFilmes.Dominio.Extension;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Tests
 {
@@ -23,8 +25,9 @@ namespace Leandrovboas.CopaFilmes.Dominio.Tests
         public void OrdenarTest()
         {
             var listaEsperada = listaFilmes.OrderBy(x => x.Id).ToList();
-            var listaOrdenada = OrdenarFaseDeGrupo.Ordenar(listaFilmes);
-            CollectionAssert.AreEqual(listaEsperada, listaOrdenada);
+            listaFilmes = listaFilmes.OrdenarFormaGenerico(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
+            listaFilmes = listaFilmes.OrdenarFormaGenerico(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
+            CollectionAssert.AreEqual(listaEsperada, listaFilmes);
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using Leandrovboas.CopaFilmes.Dominio.Extension;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
@@ -12,7 +10,9 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         public static List<Filme> GerarGrupos(List<Filme> listaFilmes)
         {
             var result = listaFilmes.PickRandom(4).ToList();
-            return OrdenarFaseDeGrupo.Ordenar(result);
+            result.OrdenarFormaGenerico(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
+            result.OrdenarFormaGenerico(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
+            return result;
         }
     }
 }
