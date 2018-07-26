@@ -1,22 +1,18 @@
 ﻿using AutoMapper;
 using Leandrovboas.CopaFilmes.Aplicacao.Interfaces;
 using Leandrovboas.CopaFilmes.Dominio.Entity;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Leandrovboas.CopaFilmes.Mvc.Controllers.Api
 {
-    [RoutePrefix("v1/Campeonato/api/")]
-    public class CampeonatoApiController : ApiController
+    [RoutePrefix("Campeonato/api")]
+    public class CampeonatoController : ApiController
     {
         private readonly ICampeonatoServicoApp _servicoApp;
 
-        public CampeonatoApiController(ICampeonatoServicoApp servicoApp)
+        public CampeonatoController(ICampeonatoServicoApp servicoApp)
         {
             _servicoApp = servicoApp;
         }

@@ -7,11 +7,11 @@ using System.Web.Http;
 
 namespace Leandrovboas.CopaFilmes.Mvc.Controllers.Api
 {
-    [RoutePrefix("v1/Filmes/api/")]
-    public class FilmeApiController : ApiController
+    [RoutePrefix("Filmes/api")]
+    public class FilmeController : ApiController
     {
         private readonly IFilmeServicoApp ServicoApp;
-        public FilmeApiController(IFilmeServicoApp servicoApp)
+        public FilmeController(IFilmeServicoApp servicoApp)
         {
             ServicoApp = servicoApp;
         }

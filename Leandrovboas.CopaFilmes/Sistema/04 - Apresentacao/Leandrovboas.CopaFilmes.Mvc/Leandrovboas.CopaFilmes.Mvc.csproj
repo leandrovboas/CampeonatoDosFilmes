@@ -167,10 +167,10 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DominioParaViewModel.cs" />
     <Compile Include="AutoMapper\ViewModelParaDominio.cs" />
-    <Compile Include="Controllers\Api\CampeonatoApiController.cs" />
+    <Compile Include="Controllers\Api\CampeonatoController.cs" />
     <Compile Include="Controllers\CampeonatoController.cs" />
     <Compile Include="ViewModels\CampeonatoViewModel.cs" />
-    <Compile Include="Controllers\Api\FilmeApiController.cs" />
+    <Compile Include="Controllers\Api\FilmeController.cs" />
     <Compile Include="Controllers\FilmesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
