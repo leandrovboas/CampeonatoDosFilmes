@@ -26,7 +26,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException), "A faseSemiFinal esta nula")]
+        [ExpectedException(typeof(ArgumentNullException), "A FaseFinal esta nula")]
         public void GerarFaseFinalTest_ParametroNulo_ThrowsArgumentNullException()
         {
             var result = FaseFinal.GerarFaseFinal(null);
@@ -39,8 +39,9 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
 
             var result = FaseFinal.GerarFaseFinal(faseSemiFinal);
 
-            Assert.AreEqual(disputa1.Perdedor, result.DisputaFinal.Perdedor);
-            Assert.AreEqual(disputa1.Vencedor, result.DisputaFinal.Vencedor);
+            Assert.AreEqual(disputa1.Vencedor, result.PrimeiroLugar);
+            Assert.AreEqual(disputa1.Perdedor, result.SeguntoLugar);
+            Assert.AreEqual(faseSemiFinal.PrimeiraDisputa.Perdedor, result.TerceiroLugar);
         }
     }
 }

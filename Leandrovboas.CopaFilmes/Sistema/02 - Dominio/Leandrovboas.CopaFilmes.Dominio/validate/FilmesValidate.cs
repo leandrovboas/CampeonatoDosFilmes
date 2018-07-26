@@ -50,7 +50,11 @@ namespace Leandrovboas.CopaFilmes.Dominio.validate
             if (faseEliminatoria.QuartaDisputa == null) throw new ArgumentNullException(nameof(faseEliminatoria.QuartaDisputa), $"A {nameof(faseEliminatoria.QuartaDisputa)} esta nula");
         }
 
-
-
+        internal static void ValidarFaseFinal(FaseSemiFinal FaseSemiFinal)
+        {
+            if (FaseSemiFinal == null) throw new ArgumentNullException(nameof(FaseSemiFinal), $"A {nameof(FaseSemiFinal)} esta nula");
+            if (FaseSemiFinal.PrimeiraDisputa == null) throw new ArgumentNullException(nameof(FaseSemiFinal.PrimeiraDisputa), $"A {nameof(FaseSemiFinal.PrimeiraDisputa)} esta nula");
+            if (FaseSemiFinal.SegundaDisputa == null) throw new ArgumentNullException(nameof(FaseSemiFinal.SegundaDisputa), $"A {nameof(FaseSemiFinal.SegundaDisputa)} esta nula");
+        }
     }
 }

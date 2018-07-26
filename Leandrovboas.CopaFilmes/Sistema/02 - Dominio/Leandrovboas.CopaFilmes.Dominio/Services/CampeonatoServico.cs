@@ -11,7 +11,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Servicos
         {
             FilmesValidate.ValidarListaFilmesCampeonato(listaFilmes);
 
-            var result = new Campeonato();
+            var result = Campeonato.GerarCampeonato(listaFilmes);
             return result;
         }
     }

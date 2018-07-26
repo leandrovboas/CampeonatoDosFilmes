@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CriacaoListaFilmes.cs" />
+    <Compile Include="Entity\CampeonatoTests.cs" />
     <Compile Include="Entity\DisputaTests.cs" />
     <Compile Include="Entity\FaseDeGrupoTests.cs" />
     <Compile Include="Entity\FaseEliminatoriaTests.cs" />

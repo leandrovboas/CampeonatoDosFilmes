@@ -24,7 +24,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
 
         #region MetodosPublicos
         public static FaseEliminatoria GerarFaseEliminatoria(FaseDeGrupo faseDeGrupo) =>
-            new FaseEliminatoria(faseDeGrupo); 
+            new FaseEliminatoria(faseDeGrupo);
         #endregion
     }
 }

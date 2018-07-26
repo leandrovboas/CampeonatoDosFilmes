@@ -1,4 +1,5 @@
 ﻿using Leandrovboas.CopaFilmes.Dominio.Entity;
+using Leandrovboas.CopaFilmes.Testes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -11,22 +12,8 @@ namespace Leandrovboas.CopaFilmes.Dominio.Servicos.Tests
         private List<Filme> listaFilmes;
 
         [TestInitialize]
-        public void Inicializar()
-        {
-            listaFilmes = new List<Filme>();
-            for (int i = 0; i < 16; i++)
-            {
-                var teste = $"Teste - {i}";
-                listaFilmes.Add(new Filme
-                {
-                    Id = teste,
-                    PrimaryTitle = teste,
-                    AverageRating = Convert.ToDecimal(i).ToString(),
-                    Year = DateTime.Now.Year
-                });
-            }
-
-        }
+        public void Inicializar() =>
+            listaFilmes = CriacaoListaFilmes.Criar();
 
         [TestMethod()]
         public void RealizarCampeonatoAsyncTest()

@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICampeonatoServicoApp.cs" />
     <Compile Include="Interfaces\IFilmeServicoApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\CampeonatoServiceApp.cs" />
     <Compile Include="Servicos\FilmeServicoApp.cs" />
   </ItemGroup>
   <ItemGroup />

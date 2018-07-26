@@ -41,6 +41,9 @@ namespace Leandrovboas.CopaFilmes.Mvc.App_Start
             container.Register<IFilmesRepositorio, FilmesRepositorio>(Lifestyle.Scoped);
             container.Register<IFilmeServico, FilmeServico>(Lifestyle.Scoped);
             container.Register<IFilmeServicoApp, FilmeServicoApp>(Lifestyle.Scoped);
+
+            container.Register<ICampeonatoServico, CampeonatoServico>(Lifestyle.Scoped);
+            container.Register<ICampeonatoServicoApp, CampeonatoServiceApp>(Lifestyle.Scoped);
         }
     }
 }
