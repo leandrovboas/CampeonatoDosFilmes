@@ -1,11 +1,11 @@
 ﻿@{
-    
+
 
     ViewBag.Title = "Resultado Final";
     ViewBag.AngularApp = "CampeonatoApp";
     ViewBag.AngularController = "CampeonatoCtrl as vm";
 }
-<div class="fundo-tela cor-fundo" ng-init="">
+<div class="fundo-tela cor-fundo" ng-init="vm.inicialCampeonato()">
     <header class="form-control fundo-titulo">
         <p class="text-uppercase pre-titulo">Campeonato de filmes</p>
         <p class="titulo">Resultado Final</p>
@@ -18,22 +18,43 @@
         </div>
     </header>
 
-    <section class="cor-fundo sem-borda">
-        <article class="row row-classificacao-titulo">
-            <div class="col-1 text-center classificacao">1º</div>
-            <div class="col-10 classificacao-titulo">Titulo Filme</div>
-        </article>
-        <article class="row row-classificacao-titulo">
-            <div class="col-1 text-center classificacao">2º</div>
-            <div class="col-10 classificacao-titulo">Titulo Filme</div>
-        </article>
-        <article class="row row-classificacao-titulo">
-            <div class="col-1 text-center classificacao">3º</div>
-            <div class="col-10 classificacao-titulo">Titulo Filme</div>
-        </article>
-    </section>
+    <div ng-show="!vm.ocultarTela">
+        <section class="cor-fundo sem-borda">
+            <article class="row row-classificacao-titulo">
+                <div class="col-1 text-center classificacao">1º</div>
+                <div class="col-10 classificacao-titulo">{{vm.resultadoCampeonato.FaseFinal.PrimeiroLugar.Titulo}}</div>
+            </article>
+            <article class="row row-classificacao-titulo">
+                <div class="col-1 text-center classificacao">2º</div>
+                <div class="col-10 classificacao-titulo">{{vm.resultadoCampeonato.FaseFinal.SeguntoLugar.Titulo}}</div>
+            </article>
+            <article class="row row-classificacao-titulo">
+                <div class="col-1 text-center classificacao">3º</div>
+                <div class="col-10 classificacao-titulo">{{vm.resultadoCampeonato.FaseFinal.TerceiroLugar.Titulo}}</div>
+            </article>
+        </section>
 
-    <div class="cor-fundo sem-borda">
-        <input class="btn btn-dark text-uppercase font-size-small" type="button" title="Exibir JSON Completo" value="Exibir JSON Completo" />
+        <div class="cor-fundo sem-borda">
+            <input class="btn btn-dark text-uppercase font-size-small" ng-click="vm.exibirJson()" type="button" title="Exibir JSON Completo" value="Exibir JSON Completo" />
+        </div>
+
+        <section class="form-control" ng-show="vm.visualizarJsos">
+            <div id="container">
+                <div class="content">
+                    <div class="col-10 classificacao-titulo json">{{vm.historicoJson}}</div>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <section class="form-control fundo-error" ng-show="vm.ocultarTela">
+        <p>Não possui um lista de filmes</p>
+        <p>Por Favor acesse o link abaixo para selecionar os filmes</p>
+        <a href="/Filmes/Index" title="Fase de Seleção">Fase de Seleção</a>
+    </section>
 </div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/campeonato")
+    @Scripts.Render("~/bundles/ng-service")
+}

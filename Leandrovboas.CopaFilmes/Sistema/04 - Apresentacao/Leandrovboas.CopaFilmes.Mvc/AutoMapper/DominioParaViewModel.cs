@@ -2,6 +2,7 @@
 using Leandrovboas.CopaFilmes.Dominio.Entity;
 using Leandrovboas.CopaFilmes.Mvc.Controllers.Api;
 using Leandrovboas.CopaFilmes.Mvc.ViewModels;
+using System.Linq;
 
 namespace Leandrovboas.CopaFilmes.Mvc.AutoMapper
 {
@@ -15,6 +16,11 @@ namespace Leandrovboas.CopaFilmes.Mvc.AutoMapper
                 .ForMember(dest => dest.Year, opt => opt.MapFrom(src => src.AnoLancamento));
 
             CreateMap<CampeonatoViewModel, Campeonato>();
+            CreateMap<DisputaViewModel, Disputa>();
+            CreateMap<FaseDeGrupoViewModel, FaseDeGrupo>();
+            CreateMap<FaseEliminatoriaViewModel, FaseEliminatoria>();
+            CreateMap<FaseFinalViewModel, FaseFinal>();
+            CreateMap<FaseSemiFinalViewModel, FaseSemiFinal>();
         }
     }
 }

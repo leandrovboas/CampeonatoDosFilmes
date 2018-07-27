@@ -73,13 +73,6 @@ textarea {
 .line {
     border-bottom: solid 3px #A8A8A8;
     width: 25px;
-    /*border-bottom: solid 1px #000;
-        width: 25px;
-    height: 2px;
-    clear: both;
-    overflow: hidden;
-    background-color: #A8A8A8;
-    position:center !important;*/
 }
 .panel-filme {
     background-color: white;
@@ -136,4 +129,42 @@ textarea {
 
 .row-classificacao-titulo {
     margin-right: -45px !important;
+}
+
+.container {
+    width: 100%;
+}
+
+container div.left {
+        float: left;
+        width: 20%;
+        background: lightblue;
+    }
+
+container div.right {
+        float: right;
+        width: 80%;
+        background: lightgray;
+    }
+
+container > div > .content {
+        padding: 3px;
+    }
+
+div.json {
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.fundo-error {
+    background-color: #d9d9d9 !important;
+    border: none !important;
+    padding: 20px !important;
+    margin: 20px !important;
+    height: auto !important;
+    width: auto !important;
+    color: black !important;
+    text-align: center;
 }

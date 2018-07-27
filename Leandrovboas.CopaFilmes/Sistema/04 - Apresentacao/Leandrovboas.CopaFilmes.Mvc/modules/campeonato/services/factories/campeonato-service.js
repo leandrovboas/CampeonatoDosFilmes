@@ -3,13 +3,23 @@
     app.factory('CampeonatoService', CampeonatoService);
     CampeonatoService.$inject = ['$http'];
 
+    //function CampeonatoService($http) {
+    //    var baseUrl = 'api/';
+    //    var IniciarCampeonato = function (listaFilmes) {
+    //        return (listaFilmes) => $http.post(baseUrl + 'IniciarCampeonato/', listaFilmes);
+    //    };
+    //    return {
+    //        IniciarCampeonato: IniciarCampeonato,
+    //    };
+    //}
+
     function CampeonatoService($http) {
         var baseUrl = 'api/';
-        var enviarFilmes = function (model) {
-            return (model) => $http.post('/Campeonato/index', model);
+        var IniciarCampeonato = function (listaFilmes) {
+            return $http.post(baseUrl + "IniciarCampeonato/", listaFilmes);
         };
         return {
-            enviarFilmes: enviarFilmes,
+            IniciarCampeonato: IniciarCampeonato,
         };
     }
 })(angular.module('ngService'));

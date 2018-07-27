@@ -2,7 +2,7 @@
 {
     public class DisputaViewModel
     {
-        public FilmeViewModel Vencedor { get; }
-        public FilmeViewModel Perdedor { get; }
+        public FilmeViewModel Vencedor { get; set; }
+        public FilmeViewModel Perdedor { get; set; }
     }
 }

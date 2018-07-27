@@ -6,10 +6,8 @@ namespace Leandrovboas.CopaFilmes.Mvc.Controllers
 {
     public class CampeonatoController : Controller
     {
-        [Route("Index/{filmes}")]
-        public ActionResult Index(ICollection<FilmeViewModel> filmes)
+        public ActionResult Index()
         {
-            ViewBag.ListaFilmes = filmes;
             return View();
         }
     }

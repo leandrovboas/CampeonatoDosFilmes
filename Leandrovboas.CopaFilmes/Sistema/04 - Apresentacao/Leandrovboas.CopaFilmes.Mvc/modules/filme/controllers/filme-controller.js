@@ -33,18 +33,10 @@
         };
 
         vm.gerarCampeonato = () => {
-            if (vm.filmesSelecionados.length !== 16) { toastr.error("Selecione 16 filmes para gerar o campeonato", "Parametro Invalido"); return;};
+            if (vm.filmesSelecionados.length !== 16) { toastr.error("Selecione 16 filmes para gerar o campeonato", "Parametro Invalido"); return; };
 
-            //$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-
-            $http({
-                url: '/Campeonato/index',
-                method: "POST",
-                data: { 'filmes': vm.filmesSelecionados }
-            })
-
-
-            CampeonatoService.enviarFilmes(vm.filmesSelecionados);
+            sessionStorage.filmes = JSON.stringify(vm.filmesSelecionados);
+            window.location.href = window.location.origin + '/Campeonato/index';
         }
 
         vm.selecionar = (filme) => {

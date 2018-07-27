@@ -32,6 +32,12 @@ namespace Leandrovboas.CopaFilmes.Mvc
                 "~/Scripts/angular/loader.js",
                 "~/Scripts/angular/angular-service-wrapper.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/campeonato")
+                .Include("~/modules/campeonato/app.js")
+                .Include("~/modules/campeonato/controllers/*.js")
+                .Include("~/modules/campeonato/services/*.js")
+                .Include("~/modules/campeonato/directives/*.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/filmes")
                 .Include("~/modules/filme/app.js")
                 .Include("~/modules/filme/controllers/*.js")
