@@ -195,6 +195,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="modules\campeonato\app.js" />
+    <Content Include="modules\campeonato\controllers\campeonato-controller.js" />
+    <Content Include="modules\campeonato\services\app.js" />
+    <Content Include="modules\campeonato\services\factories\campeonato-service.js" />
     <Content Include="modules\filme\app.js" />
     <Content Include="modules\filme\controllers\filme-controller.js" />
     <Content Include="modules\filme\services\app.js" />
@@ -1048,6 +1052,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="modules\campeonato\directives\" />
     <Folder Include="modules\filme\directives\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿(function (app) {
     app.controller('FilmeCtrl', FilmeCtrl);
-    FilmeCtrl.$inject = ['$scope', 'filmeService'];
-    function FilmeCtrl($scope, filmeService) {
+    FilmeCtrl.$inject = ['$scope', '$http', 'filmeService', 'CampeonatoService'];
+    function FilmeCtrl($scope, $http, filmeService, CampeonatoService) {
         const menssagemErro = 'Um Erro ocorreu na rotina, por favor consulte o responsável pelos sistemas';
 
         let vm = this;
@@ -35,7 +35,16 @@
         vm.gerarCampeonato = () => {
             if (vm.filmesSelecionados.length !== 16) { toastr.error("Selecione 16 filmes para gerar o campeonato", "Parametro Invalido"); return;};
 
-            toastr.success("Gerando Campeonato ........", "Gerar Campeonato", );
+            //$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+            $http({
+                url: '/Campeonato/index',
+                method: "POST",
+                data: { 'filmes': vm.filmesSelecionados }
+            })
+
+
+            CampeonatoService.enviarFilmes(vm.filmesSelecionados);
         }
 
         vm.selecionar = (filme) => {

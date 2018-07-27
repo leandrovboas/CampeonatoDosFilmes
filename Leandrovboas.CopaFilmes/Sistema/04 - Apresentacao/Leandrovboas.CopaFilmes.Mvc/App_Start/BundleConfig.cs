@@ -40,7 +40,8 @@ namespace Leandrovboas.CopaFilmes.Mvc
 
             bundles.Add(new ScriptBundle("~/bundles/ng-service").Include(
               "~/modules/filme/services/app.js",
-              "~/modules/filme/services/factories/*.js"));
+              "~/modules/filme/services/factories/*.js",
+              "~/modules/campeonato/services/factories/*.js"));
             #endregion
 
             #region Css

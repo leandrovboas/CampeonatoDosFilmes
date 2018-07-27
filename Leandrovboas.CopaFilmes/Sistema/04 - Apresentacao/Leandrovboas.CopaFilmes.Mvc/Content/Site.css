@@ -108,6 +108,32 @@ textarea {
     font-size: 10px;
 }
 
-.btn {
+#btnCampeonato {
     float: right;
+}
+
+.classificacao {
+    background-color: #6E6E6E !important;
+    border: none !important;
+    padding: 10px 10px 15px 10px !important;
+    margin: 0% 0% 1% 20px;
+    height: 3088880% !important;
+    width: 30% !important;
+    color: white !important;
+    text-align: center;
+    font-size: x-large;
+}
+
+.classificacao-titulo {
+    background-color: white !important;
+    border: none !important;
+    padding: 16px 30px 20px 10px !important;
+    margin: 0% 0% 1% 0%;
+    height: 3088880% !important;
+    width: auto !important;
+    color: black !important;
+}
+
+.row-classificacao-titulo {
+    margin-right: -45px !important;
 }

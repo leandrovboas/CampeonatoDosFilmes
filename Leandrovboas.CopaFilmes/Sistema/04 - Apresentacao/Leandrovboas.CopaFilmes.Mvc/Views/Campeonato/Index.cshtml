@@ -1,4 +1,6 @@
 ﻿@{
+    
+
     ViewBag.Title = "Resultado Final";
     ViewBag.AngularApp = "CampeonatoApp";
     ViewBag.AngularController = "CampeonatoCtrl as vm";
@@ -16,22 +18,22 @@
         </div>
     </header>
 
-    <section class="form-control cor-fundo sem-borda">
-        <div class="row">
-            <div class="clearfix"></div>
-            <article>
-                <div>1º</div>
-                <div>Titulo Filme</div>
-            </article>
-            <article>
-                <div>2º</div>
-                <div>Titulo Filme<</div>
-            </article>
-            <article>
-                <div>3º</div>
-                <div>Titulo Filme<</div>
-            </article>
-        </div>
+    <section class="cor-fundo sem-borda">
+        <article class="row row-classificacao-titulo">
+            <div class="col-1 text-center classificacao">1º</div>
+            <div class="col-10 classificacao-titulo">Titulo Filme</div>
+        </article>
+        <article class="row row-classificacao-titulo">
+            <div class="col-1 text-center classificacao">2º</div>
+            <div class="col-10 classificacao-titulo">Titulo Filme</div>
+        </article>
+        <article class="row row-classificacao-titulo">
+            <div class="col-1 text-center classificacao">3º</div>
+            <div class="col-10 classificacao-titulo">Titulo Filme</div>
+        </article>
     </section>
 
+    <div class="cor-fundo sem-borda">
+        <input class="btn btn-dark text-uppercase font-size-small" type="button" title="Exibir JSON Completo" value="Exibir JSON Completo" />
+    </div>
 </div>
