@@ -1,30 +1,35 @@
-﻿using Leandrovboas.CopaFilmes.Testes;
+﻿using Leandrovboas.CopaFilmes.Dominio.Extension;
+using Leandrovboas.CopaFilmes.Testes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
 {
     [TestClass()]
     public class FaseEliminatoriaTests
     {
-        private FaseDeGrupo FaseGrupo;
+        private List<Filme> listaFilmes;
 
         [TestInitialize]
-        public void Inicializar()
-        {
-            var listaFilmes = CriacaoListaFilmes.Criar();
-            FaseGrupo = FaseDeGrupo.GerarFaseDeGrupo(listaFilmes);
-        }
+        public void Inicializar() => listaFilmes = CriacaoListaFilmes.Criar();
 
         [TestMethod()]
         public void GerarFaseEliminatoriaTest()
         {
-            var disputa1 = Disputa.GerarDisputa(FaseGrupo.GrupoA[0], FaseGrupo.GrupoB[1]);
-            var disputa2 = Disputa.GerarDisputa(FaseGrupo.GrupoB[0], FaseGrupo.GrupoA[1]);
-            var disputa3 = Disputa.GerarDisputa(FaseGrupo.GrupoC[0], FaseGrupo.GrupoD[1]);
-            var disputa4 = Disputa.GerarDisputa(FaseGrupo.GrupoD[0], FaseGrupo.GrupoC[1]);
+            var GrupoA = GerarGrupo();
+            var GrupoB = GerarGrupo();
+            var GrupoC = GerarGrupo();
+            var GrupoD = GerarGrupo();
 
-            var result = FaseEliminatoria.GerarFaseEliminatoria(FaseGrupo);
+            var disputa1 = Disputa.GerarDisputa(GrupoA[0], GrupoB[1]);
+            var disputa2 = Disputa.GerarDisputa(GrupoB[0], GrupoA[1]);
+            var disputa4 = Disputa.GerarDisputa(GrupoD[0], GrupoC[1]);
+            var disputa3 = Disputa.GerarDisputa(GrupoC[0], GrupoD[1]);
+
+            var result = FaseEliminatoria.GerarFaseEliminatoria(GrupoA, GrupoB, GrupoC, GrupoD);
 
             Assert.AreEqual(disputa1.Perdedor, result.PrimeiraDisputa.Perdedor);
             Assert.AreEqual(disputa1.Vencedor, result.PrimeiraDisputa.Vencedor);
@@ -36,11 +41,20 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
             Assert.AreEqual(disputa4.Vencedor, result.QuartaDisputa.Vencedor);
         }
 
+        private List<Filme> GerarGrupo()
+        {
+            var result = listaFilmes.PickRandom(4).ToList();
+            listaFilmes.RemoveItens(result);
+            result = result.OrdenarFormaGenerico(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
+            result = result.OrdenarFormaGenerico(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
+            return result;
+        }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException), "A faseDeGrupo esta nula")]
         public void GerarFaseEliminatoriaTest_ParametroNulo_ThrowsArgumentNullException()
         {
-            var result = FaseEliminatoria.GerarFaseEliminatoria(null);
+            var result = FaseEliminatoria.GerarFaseEliminatoria(null, null, null, null);
         }
     }
 }

@@ -10,13 +10,19 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
 
         private FaseDeGrupo faseGrupo;
         private FaseEliminatoria faseEliminatoria;
+        private Disputa PrimeiraDisputa;
+        private Disputa SegundaDisputa;
+        private Disputa TerceiraDisputa;
+        private Disputa QuartaDisputa;
 
         [TestInitialize]
         public void Inicializar()
         {
             var listaFilmes = CriacaoListaFilmes.Criar();
-            faseGrupo = FaseDeGrupo.GerarFaseDeGrupo(listaFilmes);
-            faseEliminatoria = FaseEliminatoria.GerarFaseEliminatoria(faseGrupo);
+            PrimeiraDisputa = Disputa.GerarDisputa(listaFilmes[0], listaFilmes[1]);
+            SegundaDisputa = Disputa.GerarDisputa(listaFilmes[2], listaFilmes[3]);
+            TerceiraDisputa = Disputa.GerarDisputa(listaFilmes[4], listaFilmes[4]);
+            QuartaDisputa = Disputa.GerarDisputa(listaFilmes[5], listaFilmes[6]);
         }
 
 
@@ -24,16 +30,16 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
         [ExpectedException(typeof(ArgumentNullException), "A faseEliminatoria esta nula")]
         public void GerarFaseSemiFinalTest_ParametroNulo_ThrowsArgumentNullException()
         {
-            var result = FaseEliminatoria.GerarFaseEliminatoria(null);
+            var result = FaseSemiFinal.GerarFaseSemiFinal(null, null, null, null);
         }
 
         [TestMethod()]
         public void GerarFaseSemiFinalTest()
         {
-            var disputa1 = Disputa.GerarDisputa(faseEliminatoria.PrimeiraDisputa.Vencedor, faseEliminatoria.SegundaDisputa.Vencedor);
-            var disputa2 = Disputa.GerarDisputa(faseEliminatoria.TerceiraDisputa.Vencedor, faseEliminatoria.QuartaDisputa.Vencedor);
+            var disputa1 = Disputa.GerarDisputa(PrimeiraDisputa.Vencedor, SegundaDisputa.Vencedor);
+            var disputa2 = Disputa.GerarDisputa(TerceiraDisputa.Vencedor, QuartaDisputa.Vencedor);
 
-            var result = FaseSemiFinal.GerarFaseSemiFinal(faseEliminatoria);
+            var result = FaseSemiFinal.GerarFaseSemiFinal(PrimeiraDisputa,SegundaDisputa, TerceiraDisputa, QuartaDisputa);
 
             Assert.AreEqual(disputa1.Perdedor, result.PrimeiraDisputa.Perdedor);
             Assert.AreEqual(disputa1.Vencedor, result.PrimeiraDisputa.Vencedor);

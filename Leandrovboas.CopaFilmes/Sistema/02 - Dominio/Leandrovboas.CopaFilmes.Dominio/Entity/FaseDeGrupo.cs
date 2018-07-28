@@ -1,5 +1,4 @@
 ﻿using Leandrovboas.CopaFilmes.Dominio.Extension;
-using Leandrovboas.CopaFilmes.Dominio.validate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +19,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         #region Construtor
         protected FaseDeGrupo(List<Filme> listaFilmes)
         {
-            FilmesValidate.ValidarListaFilmesCampeonato(listaFilmes);
+            FilmesValidate.Validar(listaFilmes);
 
             ListaFilmes = listaFilmes;
             GrupoA = GerarGrupos(ref ListaFilmes);
@@ -30,13 +29,13 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
 
             if (ListaFilmes.Count != 0) throw new ApplicationException("Ocorreu um problema na criação da faze de grupo");
 
-            FilmesValidate.ValidarListasFaseGrupo(this);
+            FaseGrupoValidate.Validar(this);
         } 
         #endregion
 
         #region MetodosPublicos
         public static FaseDeGrupo GerarFaseDeGrupo(List<Filme> listaFilmes) =>
-            new FaseDeGrupo(listaFilmes); 
+            new FaseDeGrupo(listaFilmes);
         #endregion
 
         #region MetodosPrivados

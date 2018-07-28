@@ -1,16 +1,14 @@
-﻿using Leandrovboas.CopaFilmes.Dominio.validate;
-
-namespace Leandrovboas.CopaFilmes.Dominio.Entity
+﻿namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
     public class FaseSemiFinal
     {
         #region Construtor
-        public FaseSemiFinal(FaseEliminatoria faseEliminatoria)
+        public FaseSemiFinal(Disputa resultadoPrimeiraDisputa, Disputa resultadoSegundaDisputa, Disputa resultadoTerceiraDisputa, Disputa resultadoQuartaDisputa)
         {
-            FilmesValidate.ValidarFaseSemiFinal(faseEliminatoria);
+            FaseSemiFinalValidate.Validar(resultadoPrimeiraDisputa, resultadoSegundaDisputa, resultadoTerceiraDisputa, resultadoQuartaDisputa);
 
-            PrimeiraDisputa = Disputa.GerarDisputa(faseEliminatoria.PrimeiraDisputa.Vencedor, faseEliminatoria.SegundaDisputa.Vencedor);
-            SegundaDisputa = Disputa.GerarDisputa(faseEliminatoria.TerceiraDisputa.Vencedor, faseEliminatoria.QuartaDisputa.Vencedor);
+            PrimeiraDisputa = Disputa.GerarDisputa(resultadoPrimeiraDisputa.Vencedor, resultadoSegundaDisputa.Vencedor);
+            SegundaDisputa = Disputa.GerarDisputa(resultadoTerceiraDisputa.Vencedor, resultadoQuartaDisputa.Vencedor);
         }
         #endregion
 
@@ -20,8 +18,8 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         #endregion
 
         #region MetodosPublicos
-        public static FaseSemiFinal GerarFaseSemiFinal(FaseEliminatoria faseEliminatoria) =>
-            new FaseSemiFinal(faseEliminatoria);
+        public static FaseSemiFinal GerarFaseSemiFinal(Disputa resultadoPrimeiraDisputa, Disputa resultadoSegundaDisputa, Disputa resultadoTerceiraDisputa, Disputa resultadoQuartaDisputa) =>
+            new FaseSemiFinal(resultadoPrimeiraDisputa, resultadoSegundaDisputa, resultadoTerceiraDisputa, resultadoQuartaDisputa);
         #endregion
     }
 }

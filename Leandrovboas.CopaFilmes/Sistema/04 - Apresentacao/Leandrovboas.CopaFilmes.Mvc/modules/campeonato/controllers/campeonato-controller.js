@@ -17,8 +17,10 @@
                 .then(function (data) {
                     if (data.status === 200) {
                         vm.resultadoCampeonato = data.data;
+                        vm.ocultarTela = false;
                     } else {
                         vm.resultadoCampeonato = undefined;
+                        vm.ocultarTela = true;
                         toastr.error(menssagemErro);
                     }
                 });

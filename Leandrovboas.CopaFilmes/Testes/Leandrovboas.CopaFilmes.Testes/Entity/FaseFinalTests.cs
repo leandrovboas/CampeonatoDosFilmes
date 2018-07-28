@@ -12,36 +12,35 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
     [TestClass()]
     public class FaseFinalTests
     {
-        private FaseDeGrupo faseGrupo;
-        private FaseEliminatoria faseEliminatoria;
-        private FaseSemiFinal faseSemiFinal;
+        private List<Filme> listaFilmes;
+        private Disputa PrimeiraDisputa;
+        private Disputa SegundaDisputa;
 
         [TestInitialize]
         public void Inicializar()
         {
-            var listaFilmes = CriacaoListaFilmes.Criar();
-            faseGrupo = FaseDeGrupo.GerarFaseDeGrupo(listaFilmes);
-            faseEliminatoria = FaseEliminatoria.GerarFaseEliminatoria(faseGrupo);
-            faseSemiFinal = FaseSemiFinal.GerarFaseSemiFinal(faseEliminatoria);
+            listaFilmes = CriacaoListaFilmes.Criar();
+            PrimeiraDisputa = Disputa.GerarDisputa(listaFilmes[0], listaFilmes[1]);
+            SegundaDisputa = Disputa.GerarDisputa(listaFilmes[2], listaFilmes[3]);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException), "A FaseFinal esta nula")]
         public void GerarFaseFinalTest_ParametroNulo_ThrowsArgumentNullException()
         {
-            var result = FaseFinal.GerarFaseFinal(null);
+            var result = FaseFinal.GerarFaseFinal(null, null);
         }
 
         [TestMethod()]
         public void GerarFaseFinalTest()
         {
-            var disputa1 = Disputa.GerarDisputa(faseSemiFinal.PrimeiraDisputa.Vencedor, faseSemiFinal.SegundaDisputa.Vencedor);
+            var disputa1 = Disputa.GerarDisputa(PrimeiraDisputa.Vencedor, SegundaDisputa.Vencedor);
 
-            var result = FaseFinal.GerarFaseFinal(faseSemiFinal);
+            var result = FaseFinal.GerarFaseFinal(PrimeiraDisputa, SegundaDisputa);
 
             Assert.AreEqual(disputa1.Vencedor, result.PrimeiroLugar);
             Assert.AreEqual(disputa1.Perdedor, result.SeguntoLugar);
-            Assert.AreEqual(faseSemiFinal.PrimeiraDisputa.Perdedor, result.TerceiroLugar);
+            Assert.AreEqual(SegundaDisputa.Perdedor, result.TerceiroLugar);
         }
     }
 }

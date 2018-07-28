@@ -1,13 +1,11 @@
-﻿using Leandrovboas.CopaFilmes.Dominio.validate;
-
-namespace Leandrovboas.CopaFilmes.Dominio.Entity
+﻿namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
     public class Disputa
     {
         #region Construtor
         protected Disputa(Filme filme1, Filme filme2)
         {
-            FilmesValidate.ValidarDisputa(filme1, filme2);
+            DisputaValidate.Validar(filme1, filme2);
 
             if (filme1.SetAvageRatingDecimal == filme2.SetAvageRatingDecimal)
             {

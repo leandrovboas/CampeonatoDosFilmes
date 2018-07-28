@@ -1,5 +1,4 @@
-﻿using Leandrovboas.CopaFilmes.Dominio.validate;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
@@ -8,13 +7,13 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         #region Construtor
         protected Campeonato(List<Filme> listaFilmes)
         {
-            FilmesValidate.ValidarListaFilmesCampeonato(listaFilmes);
+            FilmesValidate.Validar(listaFilmes);
 
-            FaseDeGrupo = FaseDeGrupo.GerarFaseDeGrupo(listaFilmes);
-            FaseEliminatoria = FaseEliminatoria.GerarFaseEliminatoria(FaseDeGrupo);
-            FaseSemiFinal = FaseSemiFinal.GerarFaseSemiFinal(FaseEliminatoria);
-            FaseFinal = FaseFinal.GerarFaseFinal(FaseSemiFinal);
-        } 
+            FaseDeGrupo         = FaseDeGrupo.GerarFaseDeGrupo(listaFilmes);
+            FaseEliminatoria    = FaseEliminatoria.GerarFaseEliminatoria(FaseDeGrupo.GrupoA, FaseDeGrupo.GrupoB, FaseDeGrupo.GrupoC, FaseDeGrupo.GrupoD);
+            FaseSemiFinal       = FaseSemiFinal.GerarFaseSemiFinal(FaseEliminatoria.PrimeiraDisputa, FaseEliminatoria.SegundaDisputa, FaseEliminatoria.TerceiraDisputa, FaseEliminatoria.QuartaDisputa);
+            FaseFinal           = FaseFinal.GerarFaseFinal(FaseSemiFinal.PrimeiraDisputa, FaseSemiFinal.SegundaDisputa);
+        }
         #endregion
 
         #region Propriedades

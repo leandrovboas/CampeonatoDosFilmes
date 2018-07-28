@@ -1,19 +1,16 @@
-﻿using Leandrovboas.CopaFilmes.Dominio.validate;
-using System;
+﻿using System;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
     public class FaseFinal
     {
         #region Construtor
-        public FaseFinal(FaseSemiFinal faseSemiFinal)
+        public FaseFinal(Disputa primeiraDisputa, Disputa segundaDisputa)
         {
-            FilmesValidate.ValidarFaseFinal(faseSemiFinal);
+            FaseFinalValidate.Validar(primeiraDisputa, segundaDisputa);
 
-            if (faseSemiFinal == null) throw new ArgumentNullException(nameof(faseSemiFinal), $"A {nameof(faseSemiFinal)} esta nula");
-
-            DisputaFinal = Disputa.GerarDisputa(faseSemiFinal.PrimeiraDisputa.Vencedor, faseSemiFinal.SegundaDisputa.Vencedor);
-            GerarClassificacao(faseSemiFinal);
+            DisputaFinal = Disputa.GerarDisputa(primeiraDisputa.Vencedor, segundaDisputa.Vencedor);
+            GerarClassificacao(primeiraDisputa, segundaDisputa, DisputaFinal);
         }
         #endregion
 
@@ -25,18 +22,18 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         #endregion
 
         #region MetodosPublicos
-        public static FaseFinal GerarFaseFinal(FaseSemiFinal faseSemiFinal) =>
-            new FaseFinal(faseSemiFinal);
+        public static FaseFinal GerarFaseFinal(Disputa primeiraDisputa, Disputa SegundaDisputa) =>
+            new FaseFinal(primeiraDisputa, SegundaDisputa);
         #endregion
 
         #region MetodosPrivados
-        private void GerarClassificacao(FaseSemiFinal faseSemiFinal)
+        private void GerarClassificacao(Disputa primeiraDisputa, Disputa segundaDisputa, Disputa DisputaFinal)
         {
             PrimeiroLugar = DisputaFinal.Vencedor;
             SeguntoLugar = DisputaFinal.Perdedor;
-            TerceiroLugar = faseSemiFinal.PrimeiraDisputa.Vencedor == PrimeiroLugar
-                ? faseSemiFinal.PrimeiraDisputa.Perdedor
-                : faseSemiFinal.SegundaDisputa.Perdedor;
+            TerceiroLugar = primeiraDisputa.Vencedor == PrimeiroLugar
+                ? primeiraDisputa.Perdedor
+                : segundaDisputa.Perdedor;
         } 
         #endregion
     }

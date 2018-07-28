@@ -1,18 +1,18 @@
-﻿using Leandrovboas.CopaFilmes.Dominio.validate;
+﻿using System.Collections.Generic;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
     public class FaseEliminatoria
     {
         #region Construtor
-        protected FaseEliminatoria(FaseDeGrupo faseDeGrupo)
+        protected FaseEliminatoria(List<Filme> GrupoA, List<Filme> GrupoB, List<Filme> GrupoC, List<Filme> GrupoD)
         {
-            FilmesValidate.ValidarFaseEliminatoria(faseDeGrupo);
-            PrimeiraDisputa = Disputa.GerarDisputa(faseDeGrupo.GrupoA?[0], faseDeGrupo.GrupoB?[1]);
-            SegundaDisputa = Disputa.GerarDisputa(faseDeGrupo.GrupoB?[0], faseDeGrupo.GrupoA?[1]);
-            TerceiraDisputa = Disputa.GerarDisputa(faseDeGrupo.GrupoC?[0], faseDeGrupo.GrupoD?[1]);
-            QuartaDisputa = Disputa.GerarDisputa(faseDeGrupo.GrupoD?[0], faseDeGrupo.GrupoC?[1]);
-        } 
+            FaseEliminatoriaValidate.Validar(GrupoA, GrupoB, GrupoC, GrupoD);
+            PrimeiraDisputa = Disputa.GerarDisputa(GrupoA?[0], GrupoB?[1]);
+            SegundaDisputa = Disputa.GerarDisputa(GrupoB?[0], GrupoA?[1]);
+            TerceiraDisputa = Disputa.GerarDisputa(GrupoC?[0], GrupoD?[1]);
+            QuartaDisputa = Disputa.GerarDisputa(GrupoD?[0], GrupoC?[1]);
+        }
         #endregion
 
         #region Propriedades
@@ -23,8 +23,8 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         #endregion
 
         #region MetodosPublicos
-        public static FaseEliminatoria GerarFaseEliminatoria(FaseDeGrupo faseDeGrupo) =>
-            new FaseEliminatoria(faseDeGrupo);
+        public static FaseEliminatoria GerarFaseEliminatoria( List<Filme> GrupoA, List<Filme> GrupoB, List<Filme> GrupoC, List<Filme> GrupoD) =>
+            new FaseEliminatoria(GrupoA, GrupoB, GrupoC, GrupoD);
         #endregion
     }
 }
