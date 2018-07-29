@@ -18,8 +18,14 @@ namespace Leandrovboas.CopaFilmes.Mvc.Controllers.Api
             _servicoApp = servicoApp;
         }
 
+
         [HttpPost]
         [Route("IniciarCampeonato")]
+        /// <summary>
+        /// Realiza um campeonato entre os filmes para definir um vencedo
+        /// </summary>
+        /// <param name="listaFilmes">Lista contendo 16 filmes para realizar o campeonato</param>
+        /// <returns>Um historico do campeonato e os tres promeiros colocados</returns>
         public async Task<IHttpActionResult> IniciarCampeonatoAsync(List<FilmeViewModel> listaFilmes)
         {
             if (listaFilmes == null || listaFilmes.Count != 16) return BadRequest("Lista de Filmes invalida para realizar essa operação, verifique a quantirade de filmes obrigatórios");

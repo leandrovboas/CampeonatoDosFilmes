@@ -25,8 +25,8 @@ namespace Leandrovboas.CopaFilmes.Dominio.Tests
         public void OrdenarTest()
         {
             var listaEsperada = listaFilmes.OrderBy(x => x.Id).ToList();
-            listaFilmes = listaFilmes.OrdenarFormaGenerico(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
-            listaFilmes = listaFilmes.OrdenarFormaGenerico(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
+            listaFilmes = listaFilmes.OrdenarFormaGenerica(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
+            listaFilmes = listaFilmes.OrdenarFormaGenerica(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
             CollectionAssert.AreEqual(listaEsperada, listaFilmes);
         }
     }

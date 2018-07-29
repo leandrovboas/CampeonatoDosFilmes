@@ -18,6 +18,10 @@ namespace Leandrovboas.CopaFilmes.Mvc.Controllers.Api
 
         [HttpGet]
         [Route("listar")]
+        /// <summary>
+        /// Busca uma lista com 64 opcoes de filmes.
+        /// </summary>
+        /// <returns>Lista de filmes</returns>
         public async Task<IHttpActionResult> ListarTodasAsync()
         {
 

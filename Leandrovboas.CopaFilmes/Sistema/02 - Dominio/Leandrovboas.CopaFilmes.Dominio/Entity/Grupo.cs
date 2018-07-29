@@ -9,9 +9,9 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
     {
         public static List<Filme> GerarGrupos(List<Filme> listaFilmes)
         {
-            var result = listaFilmes.PickRandom(4).ToList();
-            result.OrdenarFormaGenerico(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
-            result.OrdenarFormaGenerico(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
+            var result = listaFilmes.EscolhaAleataria(4).ToList();
+            result.OrdenarFormaGenerica(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
+            result.OrdenarFormaGenerica(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
             return result;
         }
     }

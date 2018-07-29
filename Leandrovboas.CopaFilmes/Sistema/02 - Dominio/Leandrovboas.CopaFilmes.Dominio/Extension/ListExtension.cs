@@ -14,7 +14,15 @@ namespace Leandrovboas.CopaFilmes.Dominio.Extension
             }
         }
 
-        public static List<T> OrdenarFormaGenerico<T>(this List<T> source, SortDirection DirecaoOrdenacao, string propriedadeAOrdenar)
+        /// <summary>
+        /// Ordena lista pela propriedade informada e no sentido informado
+        /// </summary>
+        /// <typeparam name="T">Tipo da lista</typeparam>
+        /// <param name="source">Lista para ordenar</param>
+        /// <param name="DirecaoOrdenacao">SortDirection.Ascending\SortDirection.Descending</param>
+        /// <param name="propriedadeAOrdenar">Proprienade que sera utilizada para ordenacao</param>
+        /// <returns></returns>
+        public static List<T> OrdenarFormaGenerica<T>(this List<T> source, SortDirection DirecaoOrdenacao, string propriedadeAOrdenar)
         {
             if (!string.IsNullOrWhiteSpace(propriedadeAOrdenar) && source != null && source.Count > 0)
             {

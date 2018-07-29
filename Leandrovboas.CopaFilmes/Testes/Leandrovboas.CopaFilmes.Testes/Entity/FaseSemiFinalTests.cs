@@ -7,9 +7,6 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
     [TestClass()]
     public class FaseSemiFinalTests
     {
-
-        private FaseDeGrupo faseGrupo;
-        private FaseEliminatoria faseEliminatoria;
         private Disputa PrimeiraDisputa;
         private Disputa SegundaDisputa;
         private Disputa TerceiraDisputa;

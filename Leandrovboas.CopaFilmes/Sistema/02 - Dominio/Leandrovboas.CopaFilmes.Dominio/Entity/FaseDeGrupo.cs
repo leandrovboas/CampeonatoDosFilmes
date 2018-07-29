@@ -43,8 +43,8 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         {
             var result = listaFilmes.PickRandom(4).ToList();
             listaFilmes.RemoveItens(result);
-            result = result.OrdenarFormaGenerico(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
-            result = result.OrdenarFormaGenerico(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
+            result = result.OrdenarFormaGenerica(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
+            result = result.OrdenarFormaGenerica(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
             return result;
         }
         #endregion
