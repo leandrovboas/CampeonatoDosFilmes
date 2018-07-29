@@ -43,7 +43,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
 
         private List<Filme> GerarGrupo()
         {
-            var result = listaFilmes.PickRandom(4).ToList();
+            var result = listaFilmes.EscolhaAleataria(4).ToList();
             listaFilmes.RemoveItens(result);
             result = result.OrdenarFormaGenerica(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
             result = result.OrdenarFormaGenerica(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));

@@ -8,6 +8,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
 {
     public class FaseDeGrupo
     {
+        private const int QUANTIDADE_FILME_GRUPO = 4;
         #region Propriedades
         private static List<Filme> ListaFilmes;
         public List<Filme> GrupoA { get; }
@@ -41,7 +42,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity
         #region MetodosPrivados
         private static List<Filme> GerarGrupos(ref List<Filme> listaFilmes)
         {
-            var result = listaFilmes.PickRandom(4).ToList();
+            var result = listaFilmes.EscolhaAleataria(QUANTIDADE_FILME_GRUPO).ToList();
             listaFilmes.RemoveItens(result);
             result = result.OrdenarFormaGenerica(SortDirection.Ascending, ObjectUtilities.GetPropertyName(() => new Filme().PrimaryTitle));
             result = result.OrdenarFormaGenerica(SortDirection.Descending, ObjectUtilities.GetPropertyName(() => new Filme().SetAvageRatingDecimal));
