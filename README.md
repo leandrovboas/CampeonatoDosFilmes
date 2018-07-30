@@ -26,7 +26,8 @@ Ou pode fazer o Download [aqui](https://github.com/leandrovboas/CopaFilmes/archi
 
 #### Apos Baixar o Projeto
 <p>Abra o projeto utilizando o Visual Studio 2017 Community.
-<p>Certifique-se de que o projeto MVC esteja como StartProject.
+<p>Certifique-se de que o projeto MVC esteja como StartProject.![alt text](https://abrilcapricho.files.wordpress.com/2017/07/testes2.png)
+![GitHub Logo](/images/VisualStudio.png)
 <p>E pressione o botão Start <br>![alt text](images/VisualStudio.png)
   
 <p> Apos carregar no browse insira e seguinte URL : http://localhost:55651/Filmes/Index
