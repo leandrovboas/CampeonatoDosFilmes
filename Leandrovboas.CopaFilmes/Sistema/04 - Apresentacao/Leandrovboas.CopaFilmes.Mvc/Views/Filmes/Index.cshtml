@@ -32,9 +32,9 @@
         </div>
     </section>
 
-    <section class="form-control cor-fundo sem-borda" ng-show="vm.listaFilmes.length < 0">
-        <div class="row">
-            <div class="col-3"></div>
+    <section class="form-control cor-fundo sem-borda">
+        <div class="row" ng-show="vm.listaFilmes < 1">
+            <div class="col-4"></div>
             <div class="col-6">
                 <p class="titulo-filme">Aguardo alguns instantes</p>
                 <p class="titulo-filme">Carregando lista de Filmes</p>
