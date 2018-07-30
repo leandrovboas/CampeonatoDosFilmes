@@ -2,7 +2,6 @@
 
 [![GitHub watchers](https://img.shields.io/github/watchers/badges/shields.svg?style=social&label=Watch)]()
 [![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg)]()
-[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)]()
 [![GitHub tag](https://img.shields.io/github/tag/expressjs/express.svg)]()
 [![Github file size](https://img.shields.io/github/size/webcaetano/craft/build/phaser-craft.min.js.svg)]()
 
