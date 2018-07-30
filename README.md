@@ -28,12 +28,12 @@ Ou pode fazer o Download [aqui](https://github.com/leandrovboas/CopaFilmes/archi
 <p>Abra o projato utilizando o Visual Studio 2017 Community.
 <p>Sertifique-se de que o projeto MVC estaja como StartProject.
 <p>E presione o botão Start
-![Screen Shot](images/VisualStudio.png)
+![Alt text](/images/VisualStudio.png?raw=true)
 
 #### Tela Inicial
 <p>Na primeira tela basta selecionar 16 filmes de sua preferencia.
 <p>Clique no botão GERAR MEU CAMPEONATO par que a aplicação realize o Campeonato.
-![Screen Shot](images/FaseSelecao.png)
+![Screen Shot](/images/FaseSelecao.png)
   
 #### Tela de Resultado
 <p>Na tela de resultado final será exibido a classificação dos tres primeiros colocados.
