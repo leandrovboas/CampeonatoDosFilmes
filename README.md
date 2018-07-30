@@ -1,5 +1,11 @@
 # Copa De Filmes
 
+[![GitHub watchers](https://img.shields.io/github/watchers/badges/shields.svg?style=social&label=Watch)]()
+[![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg)]()
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)]()
+[![GitHub tag](https://img.shields.io/github/tag/expressjs/express.svg)]()
+[![Github file size](https://img.shields.io/github/size/webcaetano/craft/build/phaser-craft.min.js.svg)]()
+
 Vamos realizar uma copa com seus filmes favoritos?
 <p>Essa aplicação disponibiliza uma lista contendo 64 filmes, para que o usuário possa escolhe 16 dentes eles e realizar um campeonato.
 <p>Apos escolher os filmes basta clicar em GERAR MEU CAMPEONATO para que a aplicação gere uma verdadeira copa, com fase de grupo, eliminatória, semifinal e a grande final. Com base nas notas dos filmes e de forma automática.
