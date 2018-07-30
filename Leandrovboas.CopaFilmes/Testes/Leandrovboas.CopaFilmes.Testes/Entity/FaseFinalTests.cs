@@ -1,11 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Leandrovboas.CopaFilmes.Dominio.Entity;
+﻿using Leandrovboas.CopaFilmes.Testes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Leandrovboas.CopaFilmes.Testes;
 
 namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
 {

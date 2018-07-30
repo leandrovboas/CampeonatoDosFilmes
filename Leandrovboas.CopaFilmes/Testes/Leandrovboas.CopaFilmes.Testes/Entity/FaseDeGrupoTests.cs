@@ -13,7 +13,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
         private List<Filme> listaFilmes;
 
         [TestInitialize]
-        public void Inicializar() => 
+        public void Inicializar() =>
             listaFilmes = CriacaoListaFilmes.Criar();
 
         [TestMethod()]

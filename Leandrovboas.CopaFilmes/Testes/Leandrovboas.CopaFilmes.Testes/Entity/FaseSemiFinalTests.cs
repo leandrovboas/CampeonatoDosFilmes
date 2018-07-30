@@ -24,7 +24,7 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
 
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException), "A faseEliminatoria esta nula")]
+        [ExpectedException(typeof(ArgumentNullException), "A faseEliminatoria esta nulo")]
         public void GerarFaseSemiFinalTest_ParametroNulo_ThrowsArgumentNullException()
         {
             var result = FaseSemiFinal.GerarFaseSemiFinal(null, null, null, null);

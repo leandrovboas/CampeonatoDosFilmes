@@ -12,18 +12,24 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
     public class FaseEliminatoriaTests
     {
         private List<Filme> listaFilmes;
+        private List<Filme> GrupoA;
+        private List<Filme> GrupoB;
+        private List<Filme> GrupoC;
+        private List<Filme> GrupoD;
 
         [TestInitialize]
-        public void Inicializar() => listaFilmes = CriacaoListaFilmes.Criar();
+        public void Inicializar()
+        {
+            listaFilmes = CriacaoListaFilmes.Criar();
+            GrupoA = GerarGrupo();
+            GrupoB = GerarGrupo();
+            GrupoC = GerarGrupo();
+            GrupoD = GerarGrupo();
+        }
 
         [TestMethod()]
         public void GerarFaseEliminatoriaTest()
         {
-            var GrupoA = GerarGrupo();
-            var GrupoB = GerarGrupo();
-            var GrupoC = GerarGrupo();
-            var GrupoD = GerarGrupo();
-
             var disputa1 = Disputa.GerarDisputa(GrupoA[0], GrupoB[1]);
             var disputa2 = Disputa.GerarDisputa(GrupoB[0], GrupoA[1]);
             var disputa4 = Disputa.GerarDisputa(GrupoD[0], GrupoC[1]);
@@ -55,6 +61,14 @@ namespace Leandrovboas.CopaFilmes.Dominio.Entity.Tests
         public void GerarFaseEliminatoriaTest_ParametroNulo_ThrowsArgumentNullException()
         {
             var result = FaseEliminatoria.GerarFaseEliminatoria(null, null, null, null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "O GrupoA gerado incorreto")]
+        public void GerarFaseEliminatoriaTest_ParametroInvalido_ThrowsArgumentNullException()
+        {
+            GrupoA.Remove(GrupoA[0]);
+            var result = FaseEliminatoria.GerarFaseEliminatoria(GrupoA, GrupoB, GrupoC, GrupoD);
         }
     }
 }
