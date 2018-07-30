@@ -26,21 +26,24 @@ Ou pode fazer o Download [aqui](https://github.com/leandrovboas/CopaFilmes/archi
 
 #### Apos Baixar o Projeto
 <p>Abra o projeto utilizando o Visual Studio 2017 Community.
-<p>Certifique-se de que o projeto MVC esteja como StartProject.![alt text](https://abrilcapricho.files.wordpress.com/2017/07/testes2.png)
-![GitHub Logo](/images/VisualStudio.png)
-<p>E pressione o botão Start <br>![alt text](images/VisualStudio.png)
+<p>Certifique-se de que o projeto MVC esteja como StartProject. (Passo 1)
+<p>E pressione o botão Start <br> (Passo 2)
+  
+  ![alt text](/images/VisualStudio.png)
   
 <p> Apos carregar no browse insira e seguinte URL : http://localhost:55651/Filmes/Index
 
 #### Tela Inicial
 <p>Na primeira tela basta selecionar 16 filmes de sua preferencia.
 <p>Clique no botão GERAR MEU CAMPEONATO par que a aplicação realize o Campeonato.<br>
-![Screen Shot](/images/FaseSelecao.png)
+  
+  ![alt text](/images/FaseSelecao.png)
   
 #### Tela de Resultado
 <p>Na tela de resultado final será exibido a classificação dos três primeiros colocados.
 <p>Terá um botão para visualização do histórico do campeonato, no formato json, contendo todas as fase do campeonato.<br>
-![Screen Shot](images/ResultadoFinal.png)
+  
+  ![alt text](images/ResultadoFinal.png)
 
 ## Licence
 
