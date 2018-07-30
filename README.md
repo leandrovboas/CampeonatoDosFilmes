@@ -1,2 +1,47 @@
-# CopaFilmes
-Serámrealizado uma Copa Mundial dos Filmes
+# Copa De Filmes
+
+Vamos realizar um copa com seus filmes favoritos?
+<p>Essa aplicação disponibiliza uma lista contendo 64 filmes, para que o usuário possa escolhe 16 dentes eles e realizar um campeonato.
+<p>Apos escoler os filmes basta clicar em GERAR MEU CAMPEONATO para que a aplicação gere um verdadeira copa, com fase de grupo, eliminatoria, semifinal e a grande final. Com base nas notas dos filmes e de forma automatica.
+<p>Assim que o campeonato chegar ao fim o usuário e redirecionado para a pagina com a classificação de primeiro, segundo e terceiro lugar.
+<p>Um botao estará disponivel para o case de o usuário queira conferir todo o historico da competição (no formato Json).
+
+
+## Começando a utilização
+
+### Para utilizar em seu PC localmente
+
+#### Download Do Código Fonte
+
+usando git
+
+```bash
+git clone https://github.com/leandrovboas/CopaFilmes.git
+```
+
+Ou pode fazer o Download [aqui](https://github.com/leandrovboas/CopaFilmes/archive/master.zip)
+
+
+### Utilizando
+
+#### Apos Baixar o Projeto
+<p>Abra o projato utilizando o Visual Studio 2017 Community.
+<p>Sertifique-se de que o projeto MVC estaja como StartProject.
+<p>E presione o botão Start
+![Screen Shot](images/VisualStudio.png)
+
+#### Tela Inicial
+<p>Na primeira tela basta selecionar 16 filmes de sua preferencia.
+<p>Clique no botão GERAR MEU CAMPEONATO par que a aplicação realize o Campeonato.
+![Screen Shot](images/FaseSelecao.png)
+  
+#### Tela de Resultado
+<p>Na tela de resultado final será exibido a classificação dos tres primeiros colocados.
+<p>Terá um botão para visualização do histórico do campeonato, no formato json, contendo todas as fase do campeonato.
+![Screen Shot](images/ResultadoFinal.png)
+
+## Licence
+
+Source code can be found on [github](https://github.com/georgeOsdDev/markdown-edit), licenced under [MIT](http://opensource.org/licenses/mit-license.php).
+
+Developed by [Leandro Vilas Boas](https://br.linkedin.com/in/leandro-vilas-boas-55403b2b)
